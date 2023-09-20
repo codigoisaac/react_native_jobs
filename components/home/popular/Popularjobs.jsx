@@ -5,7 +5,7 @@ import {
   Text,
   TouchableOpacity,
   FlatList,
-  ActivityIndicator,
+  ActivityIndicator
 } from "react-native";
 
 import styles from "./popularjobs.style";
@@ -17,7 +17,7 @@ const Popularjobs = () => {
   const router = useRouter();
   const { data, isLoading, error } = useFetch("search", {
     query: "React developer",
-    num_pages: "1",
+    num_pages: "1"
   });
 
   const [selectedJob, setSelectedJob] = useState();
@@ -30,17 +30,18 @@ const Popularjobs = () => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.headerTitle}>Popular jobs</Text>
+        <Text style={styles.headerTitle}>Trampos populares</Text>
+
         <TouchableOpacity>
-          <Text style={styles.headerBtn}>Show all</Text>
+          <Text style={styles.headerBtn}>Ver todos</Text>
         </TouchableOpacity>
       </View>
 
       <View style={styles.cardsContainer}>
         {isLoading ? (
-          <ActivityIndicator size='large' color={COLORS.primary} />
+          <ActivityIndicator size="large" color={COLORS.primary} />
         ) : error ? (
-          <Text>Something went wrong</Text>
+          <Text>Algo deu errado</Text>
         ) : (
           <FlatList
             data={data}

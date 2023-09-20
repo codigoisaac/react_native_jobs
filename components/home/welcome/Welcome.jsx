@@ -5,24 +5,24 @@ import {
   TextInput,
   TouchableOpacity,
   Image,
-  FlatList,
+  FlatList
 } from "react-native";
 import { useRouter } from "expo-router";
 
 import styles from "./welcome.style";
 import { icons, SIZES } from "../../../constants";
 
-const jobTypes = ["Full-time", "Part-time", "Contractor"];
+const jobTypes = ["Tempo integral", "Meio período", "Temporário"];
 
 const Welcome = ({ searchTerm, setSearchTerm, handleClick }) => {
   const router = useRouter();
-  const [activeJobType, setActiveJobType] = useState("Full-time");
+  const [activeJobType, setActiveJobType] = useState("Tempo integral");
 
   return (
     <View>
       <View style={styles.container}>
-        <Text style={styles.userName}>Hello Adrian</Text>
-        <Text style={styles.welcomeMessage}>Find your perfect job</Text>
+        <Text style={styles.userName}>🌞 Bom dia, Isaac</Text>
+        <Text style={styles.welcomeMessage}>Bora achar um trampo 😎</Text>
       </View>
 
       <View style={styles.searchContainer}>
@@ -31,14 +31,14 @@ const Welcome = ({ searchTerm, setSearchTerm, handleClick }) => {
             style={styles.searchInput}
             value={searchTerm}
             onChangeText={(text) => setSearchTerm(text)}
-            placeholder='What are you looking for?'
+            placeholder="Que tipo de trampo vc procura?"
           />
         </View>
 
         <TouchableOpacity style={styles.searchBtn} onPress={handleClick}>
           <Image
             source={icons.search}
-            resizeMode='contain'
+            resizeMode="contain"
             style={styles.searchBtnImage}
           />
         </TouchableOpacity>
